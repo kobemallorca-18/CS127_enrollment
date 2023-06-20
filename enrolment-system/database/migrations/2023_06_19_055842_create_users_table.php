@@ -13,7 +13,7 @@ class CreateUsersTable extends Migration
             $table->string('name')->nullable();;
             $table->string('username')->unique();
             $table->string('password')->nullable();;
-            $table->string('role')->nullable();;
+            $table->string('role')->default('student');
             $table->timestamps();
         });
     }

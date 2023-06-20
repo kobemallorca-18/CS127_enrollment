@@ -15,5 +15,6 @@ class Student extends Model
         'name',
         'username',
         'password',
+        'role',
     ];
 }

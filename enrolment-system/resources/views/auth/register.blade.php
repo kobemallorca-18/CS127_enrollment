@@ -72,6 +72,31 @@
                                 </div>
                             </div>
 
+                            <div class="form-group row">
+                                <div class="col-md-6 offset-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="teacherCheckbox" name="teacher_checkbox">
+
+                                        <label class="form-check-label" for="teacherCheckbox">
+                                            I am a teacher
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script>
+                                const roleSelect = document.getElementById('role');
+                                const teacherCheckbox = document.getElementById('teacherCheckbox');
+
+                                teacherCheckbox.addEventListener('change', function() {
+                                    if (teacherCheckbox.checked) {
+                                        roleSelect.value = 'teacher';
+                                    } else {
+                                        roleSelect.value = 'student';
+                                    }
+                                });
+                            </script>
+
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">

@@ -22,10 +22,13 @@ class RegisterController extends Controller
             'password' => 'required|string|min:8|confirmed',
         ]);
 
+        $role = isset($request->teacher_checkbox) && $request->teacher_checkbox ? 'teacher' : 'student';
+
         $student = Student::create([
             'name' => $validatedData['name'],
             'username' => $validatedData['username'],
             'password' => bcrypt($validatedData['password']),
+            'role' => $role,
         ]);
 
         // Additional logic for registration success or redirection
